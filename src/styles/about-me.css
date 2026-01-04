@@ -1,0 +1,159 @@
+.about-me {
+	min-height: 100vh;
+	display: flex;
+	padding: 2rem 4rem;
+	/* justify-content: center;
+	align-items: center; */
+}
+
+.about-me .title {
+	margin-top: 6rem;
+}
+
+.about-me > div {
+	width: 50%;
+	padding: 1rem;
+}
+
+.about-me p {
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	line-height: 1.5rem;
+}
+
+.timeline {
+	padding-left: 3rem;
+	position: relative;
+	font-size: 1.1rem;
+	margin-top: 2rem;
+}
+
+.timeline > h1 {
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	font-size: 2.2rem;
+	font-weight: 500;
+}
+
+.timeline::after {
+	position: absolute;
+	content: '';
+	top: 60px;
+	left: 35px;
+	width: 2px;
+	height: calc(100% - 60px);
+	background-color: rgb(var(--primary));
+}
+
+.timeline > ul {
+	list-style-type: none;
+}
+
+.timeline li {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.timeline-item {
+	position: relative;
+}
+
+.timeline-list {
+	padding-left: 2rem;
+}
+
+.timeline-description {
+	margin-block: 1rem;
+}
+
+.timeline-item::before {
+	position: absolute;
+	content: '';
+	top: 6px;
+	left: -53px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	border: 2px solid rgb(var(--primary));
+	background-color: black;
+	z-index: 99;
+}
+
+.timeline .designation {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.timeline .place {
+	color: rgb(var(--primary));
+	letter-spacing: 0.1rem;
+	font-size: 1.2rem;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.about-me .intro {
+	font-size: 1.25rem;
+	font-weight: 500;
+	color: #fff;
+	background: linear-gradient(to top right, #ffffff00, #1fc3ff21);
+	padding: 1.5rem 3rem;
+	border-radius: 12px;
+	text-align: center;
+}
+
+.about-me .intro p {
+	margin-block: 0.4rem;
+	line-height: 1.8rem;
+	color: rgba(255, 255, 255, 0.85); /* Slightly softer white */
+}
+
+.about-me .intro strong {
+	color: rgb(31, 195, 255); /* Your primary color */
+	font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+	.about-me {
+		padding: 2rem 2rem;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		text-align: center;
+	}
+
+	.timeline .designation {
+		font-size: 1.1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.timeline > h1 {
+		font-size: 1.8rem;
+	}
+
+	.about-me > div {
+		width: 100%;
+		padding: 0;
+	}
+
+	.about-me .intro {
+		padding: 1.5rem 1rem;
+	}
+
+	.about-me .intro p {
+		margin-block: 0.4rem;
+		font-size: 1.2rem;
+		line-height: 1.8rem;
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.about-me .intro strong {
+		color: rgb(31, 195, 255);
+		font-weight: 600;
+	}
+
+	.timeline .place {
+		font-size: 1rem;
+		letter-spacing: 0.05rem;
+	}
+}
