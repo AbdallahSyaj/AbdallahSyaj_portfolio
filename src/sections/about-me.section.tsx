@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { SectionTitle } from '../components/section-title.component';
 
 const timeline = [
@@ -5,84 +6,85 @@ const timeline = [
 		title: 'Experience',
 		items: [
 			{
-				title: 'Full-Stack Developer',
-				place: 'Blue Ray Web Solutions',
-				timePeriod: '2025 - Present',
+				title: 'Software Engineer (Full-Stack Developer)',
+				place: 'Blue Ray',
+				timePeriod: 'Oct 2026 – Present',
 				description: (
 					<ul>
 						<li>
-							Contributed to enterprise-level systems for the <strong>Jordan Labor Observatory</strong>, focusing on data-driven dashboards and reporting tools that improved decision-making speed and data accuracy.
+							Developed and maintained <strong>full-stack web applications</strong> using
+							<strong> Laravel</strong>, <strong>React</strong>, and <strong>MySQL</strong>.
 						</li>
 						<li>
-							Worked on internal systems for the <strong>Aqaba Special Economic Zone Authority</strong>, helping automate administrative workflows and reduce manual processing time.
+							Built scalable backend systems and optimized complex database queries,
+							improving API performance by <strong>up to 40%</strong>.
 						</li>
 						<li>
-							Built and maintained full-stack web applications using <strong>Laravel</strong>, <strong>Blade</strong>, and <strong>MySQL</strong>, with a strong focus on clean architecture and performance.
+							Designed secure REST APIs using <strong>Laravel Sanctum</strong> and
+							implemented modern frontend interfaces.
 						</li>
 						<li>
-							Enhanced system performance and usability, resulting in faster page load times and improved overall productivity for end users.
+							Developed internal <strong>admin dashboards</strong> and automated
+							reporting systems that reduced manual work by <strong>20+ hours monthly</strong>.
+						</li>
+						<li>
+							Collaborated in Agile teams using <strong>Git, GitHub, and Jira</strong>.
 						</li>
 					</ul>
 				),
 			},
 			{
-				title: 'Software Developer Intern',
-				place: 'Optimum Partners',
-				timePeriod: '3 Months - 2025',
+				title: 'Data Analyst',
+				place: 'Orange Jordan',
+				timePeriod: 'May 2025 – Sep 2025',
 				description: (
 					<ul>
 						<li>
-							Gained hands-on experience with <strong>Python (FastAPI)</strong> for building RESTful APIs and backend services.
+							Analyzed large-scale <strong>CRM datasets</strong> using advanced SQL queries.
 						</li>
 						<li>
-							Worked with <strong>React</strong> and <strong>TypeScript</strong> to build small frontend projects, focusing on component-based architecture and type safety.
+							Built automated dashboards and reports to monitor business KPIs.
 						</li>
 						<li>
-							Developed several small practice projects to understand full-stack integration between frontend and backend systems.
-						</li>
-						<li>
-							Improved problem-solving skills and understanding of real-world development workflows, version control, and teamwork.
+							Improved data accessibility and reporting efficiency for internal teams.
 						</li>
 					</ul>
 				),
 			},
 			{
-				title: 'IT Support',
-				place: 'Zepter International Jordan',
-				timePeriod: '2024 - 2025',
-				description: (
-					<ul>
-						<li>
-							Provided day-to-day <strong>IT support</strong> for employees, including hardware, software, and operating system issues.
-						</li>
-						<li>
-							Assisted in setting up workstations, printers, and basic network configurations.
-						</li>
-						<li>
-							Handled user support requests, troubleshooting common technical problems to ensure minimal downtime.
-						</li>
-						<li>
-							Gained solid foundational knowledge in IT infrastructure and corporate technical support environments.
-						</li>
-					</ul>
-				),
-			},
-		],
-	},
-	{
-		title: 'Certification',
-		items: [
-			{
-				title: 'Full-Stack Development Program',
+				title: 'Full-Stack Web Developer Trainee',
 				place: 'Orange Coding Academy',
-				timePeriod: '2025/1 - 2025/6',
+				timePeriod: 'Jan 2025 – May 2025',
 				description: (
 					<ul>
 						<li>
-							Completed an intensive full-stack development program with a strong focus on real-world projects.
+							Intensive full-stack training program focusing on
+							<strong> Laravel, React, MySQL, and REST APIs</strong>.
 						</li>
 						<li>
-							Worked with <strong>Laravel</strong>, <strong>JavaScript</strong>, <strong>React</strong>, databases, and applied <strong>OOP principles</strong> in practical scenarios.
+							Built responsive web applications with authentication systems
+							and real-world project workflows.
+						</li>
+						<li>
+							Worked with <strong>Git, Figma, Trello</strong>, and Agile development practices.
+						</li>
+					</ul>
+				),
+			},
+			{
+				title: 'IT Assistant & Data Entry',
+				place: 'Zepter International Jordan',
+				timePeriod: 'Feb 2024 – Dec 2024',
+				description: (
+					<ul>
+						<li>
+							Provided technical support for hardware and software issues.
+						</li>
+						<li>
+							Maintained internal systems and assisted with company IT operations.
+						</li>
+						<li>
+							Managed accurate data entry and digital records organization.
 						</li>
 					</ul>
 				),
@@ -93,16 +95,18 @@ const timeline = [
 		title: 'Education',
 		items: [
 			{
-				title: 'Bachelor of Science in Computer Science (BSCS)',
-				place: 'The Hashmate University in Jordan',
-				timePeriod: '2020 - 2024',
+				title: 'Bachelor of Science in Computer Science',
+				place: 'Hashemite University – Jordan',
+				timePeriod: '2020 – 2024',
 				description: (
 					<ul>
 						<li>
-							Built a strong foundation in software engineering, algorithms, databases, and problem-solving.
+							Strong academic foundation in <strong>software engineering</strong>,
+							<strong> algorithms</strong>, and <strong>database systems</strong>.
 						</li>
 						<li>
-							Continuously expanding knowledge in advanced topics such as <strong>Docker</strong> and <strong>Domain-Driven Design (DDD)</strong>.
+							Graduation project: <strong>Tasha Mobile Application</strong> for
+							connecting volunteers with opportunities.
 						</li>
 					</ul>
 				),
@@ -112,6 +116,28 @@ const timeline = [
 ];
 
 export const AboutMe = () => {
+	useEffect(() => {
+		const items = document.querySelectorAll('.timeline-list');
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+					}
+				});
+			},
+			{
+				threshold: 0.15,
+				rootMargin: '0px 0px -50px 0px',
+			}
+		);
+
+		items.forEach((item) => observer.observe(item));
+
+		return () => observer.disconnect();
+	}, []);
+
 	return (
 		<section className='about-me container' id='about-me'>
 			<div>
@@ -120,13 +146,30 @@ export const AboutMe = () => {
 			<div>
 				<div className='intro'>
 					<p style={{ marginTop: '20px' }}>
-						👋 Hi, I'm <strong>Abdallah Syaj</strong>, a Full-Stack Developer based in Amman, Jordan.
+						👋 Hi, I'm <strong>Abdallah Syaj</strong>, a Software Engineer and Full-Stack Developer based in Amman, Jordan.
 					</p>
+
 					<p>
-						I build scalable and efficient web applications using <strong>Laravel</strong>, <strong>Blade</strong>, and modern frontend technologies. I have experience working on government and enterprise-level systems as well as internal dashboards.
+						I specialize in building scalable web applications and backend systems using
+						<strong> Laravel</strong>, <strong>MySQL</strong>, and modern frontend technologies
+						like <strong>React</strong> and <strong>JavaScript</strong>.
 					</p>
+
 					<p>
-						I’m passionate about clean code, performance optimization, and continuous learning. Currently, I’m expanding my skill set in <strong>Python</strong>, <strong>FastAPI</strong>, and modern development practices.
+						In my professional experience, I've contributed to production systems used by
+						hundreds of users, developed secure <strong>REST APIs</strong>, and built internal <strong>dashboards </strong>
+						 that helped automate reporting and administrative workflows.
+					</p>
+
+					<p>
+						My work focuses on writing <strong>clean</strong>, <strong>maintainable code</strong> and <strong>optimizing system
+						performance</strong> — including improving database queries and backend logic to
+						significantly reduce response times and manual processing tasks.
+					</p>
+
+					<p>
+						I enjoy solving complex technical problems, designing efficient system
+						architectures, and continuously improving my skills as a full-stack engineer.
 					</p>
 				</div>
 

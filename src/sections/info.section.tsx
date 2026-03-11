@@ -11,7 +11,7 @@ import { TextHover } from '../components/text-hover.component';
 export const InfoSection = () => {
   return (
     <div className='hero-section'>
-      <a
+      {/* <a
         href='https://github.com/AbdallahSyaj'
         target='_blank'
         rel='noopener noreferrer'
@@ -22,11 +22,11 @@ export const InfoSection = () => {
           <FontAwesomeIcon icon={faGithub} />
         </div>
         <span></span>
-      </a>
+      </a> */}
       <FloatingButton
         label='About Me'
         className='first'
-        href='#about-me'
+        href='/AbdallahSyaj_portfolio/#about-me'
       />
       <p>Hi, I am</p>
       <TextHover
@@ -61,7 +61,7 @@ export const InfoSection = () => {
           aria-label='mail'
         />
         <GlowLink
-          href='Abdallah-Syaj.pdf'
+          href='/AbdallahSyaj_portfolio/public/Abdallah-Syaj.pdf'
 		  target='_blank'
           icon={<HiOutlineDocumentDownload color='rgba(93, 215, 154, 1)' />}
           color='rgba(34, 197, 94, 0.7)'
