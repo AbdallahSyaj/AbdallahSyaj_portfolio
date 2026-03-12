@@ -1,9 +1,6 @@
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { IoMailOutline } from 'react-icons/io5';
 import { HiOutlineDocumentDownload } from 'react-icons/hi';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-
 import { FloatingButton } from '../components/floating-button';
 import { GlowLink } from '../components/glow-box-link';
 import { TextHover } from '../components/text-hover.component';
@@ -61,7 +58,7 @@ export const InfoSection = () => {
           aria-label='mail'
         />
         <GlowLink
-          href='/AbdallahSyaj_portfolio/public/Abdallah-Syaj.pdf'
+          href='/AbdallahSyaj_portfolio/Abdallah-Syaj.pdf'
 		  target='_blank'
           icon={<HiOutlineDocumentDownload color='rgba(93, 215, 154, 1)' />}
           color='rgba(34, 197, 94, 0.7)'
