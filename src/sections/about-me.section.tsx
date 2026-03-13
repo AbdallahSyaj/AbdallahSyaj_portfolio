@@ -8,7 +8,7 @@ const timeline = [
 			{
 				title: 'Software Engineer (Full-Stack Developer)',
 				place: 'Blue Ray',
-				timePeriod: 'Oct 2026 – Present',
+				timePeriod: 'Oct 2025 – Present',
 				description: (
 					<ul>
 						<li>
